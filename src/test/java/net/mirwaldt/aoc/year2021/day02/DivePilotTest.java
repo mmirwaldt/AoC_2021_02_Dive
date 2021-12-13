@@ -55,4 +55,17 @@ public class DivePilotTest {
         assertEquals(1, divePilot.depth());
         assertEquals(4, divePilot.position());
     }
+
+    @Test
+    void givenTheSample_when_thenReturnDepthTenAndPositionFifteen() {
+        DivePilot divePilot = new DivePilotSimulator();
+        divePilot.forward(5);
+        divePilot.down(5);
+        divePilot.forward(8);
+        divePilot.up(3);
+        divePilot.down(8);
+        divePilot.forward(2);
+        assertEquals(10, divePilot.depth());
+        assertEquals(15, divePilot.position());
+    }
 }
