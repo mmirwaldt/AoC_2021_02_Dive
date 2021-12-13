@@ -14,17 +14,17 @@ public class DivePilotSimulator implements DivePilot {
     }
 
     @Override
-    public void forward(int dx) {
-        position += dx;
+    public void forward(int x) {
+        position += x;
     }
 
     @Override
-    public void up(int dy) {
-        depth -= dy;
+    public void up(int x) {
+        depth -= x;
     }
 
     @Override
-    public void down(int dy) {
-        depth += dy;
+    public void down(int x) {
+        depth += x;
     }
 }
