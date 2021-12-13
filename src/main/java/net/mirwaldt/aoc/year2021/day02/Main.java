@@ -11,6 +11,16 @@ public class Main {
         // part one
         final List<String> lines = Files.readAllLines(Path.of("input"), StandardCharsets.US_ASCII);
         DivePilot divePilot = new DivePilotSimulator();
+        dive(lines, divePilot);
+        System.out.println(divePilot.depth() * divePilot.position()); // result: 2102357
+
+        // part two
+        DivePilot aimDivePilot = new AimDivePilotSimulator();
+        dive(lines, aimDivePilot);
+        System.out.println(aimDivePilot.depth() * aimDivePilot.position()); // result: 2101031224
+    }
+
+    private static void dive(List<String> lines, DivePilot divePilot) {
         for (String line : lines) {
             String[] tokens = line.split(" ");
             String command = tokens[0];
@@ -25,6 +35,5 @@ public class Main {
                 throw new RuntimeException("Cannot handle command '" + command + "'.");
             }
         }
-        System.out.println(divePilot.depth() * divePilot.position()); // result: 2102357
     }
 }
