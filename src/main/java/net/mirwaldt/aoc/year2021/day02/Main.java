@@ -25,14 +25,11 @@ public class Main {
             String[] tokens = line.split(" ");
             String command = tokens[0];
             int x = Integer.parseInt(tokens[1]);
-            if(command.equals("forward")) {
-                divePilot.forward(x);
-            } else if(command.equals("up")) {
-                divePilot.up(x);
-            } else if(command.equals("down")) {
-                divePilot.down(x);
-            } else {
-                throw new RuntimeException("Cannot handle command '" + command + "'.");
+            switch (command) {
+                case "forward" -> divePilot.forward(x);
+                case "up" -> divePilot.up(x);
+                case "down" -> divePilot.down(x);
+                default -> throw new RuntimeException("Cannot handle command '" + command + "'.");
             }
         }
     }
