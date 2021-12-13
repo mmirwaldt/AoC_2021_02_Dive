@@ -25,6 +25,6 @@ public class Main {
                 throw new RuntimeException("Cannot handle command '" + command + "'.");
             }
         }
-        System.out.println(divePilot.depth() * divePilot.position());
+        System.out.println(divePilot.depth() * divePilot.position()); // result: 2102357
     }
 }
